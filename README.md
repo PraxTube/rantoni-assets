@@ -30,6 +30,12 @@ Overall a great reference for what NOT to do is in the game Redeemer, boy oh boy
 
 ### Attacks
 
+#### Aim Assist
+
+It may be necessary to snap the players attack to an enemy target. How exactly to implement this can be tricky (from a design perspective), this video covers it pretty well `https://www.youtube.com/watch?v=yGci-Lb87zs`.
+
+#### Charging Attacks
+
 Bro, hear me out. Holding down light/heavy attack will trigger a "charged version", for the light attack it will be a continous stream of strikes that start slow and get faster and faster (like a gatling gun), the player is moving forward while doing this, similar to the one attack from wizards of legends with the ice melee attack. The heavy attack charges until a max is hit, when the player releases the character first stomps on the ground real hard, sending all his enemies around him to get fling into the air (though no knockback, just up), then the player jumps up and performs a sick ass all round house heel kick, sending all the enemies into oblivion.
 
 I think this would also make for a great trailer ending.
