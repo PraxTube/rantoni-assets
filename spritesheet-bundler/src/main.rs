@@ -14,7 +14,7 @@ const OUTPUT_DIR: &str = "out/";
 const OUTPUT_RON_FILE: &str = "out.trickfilm.ron";
 const OUTPUT_ASSET_MACRO_FILE: &str = "out-asset.txt";
 
-const FRAME_RATE: f32 = 30.0;
+const FRAME_RATE: f32 = 18.0;
 
 const TRICKFILM_ASSET_MACRO_PATH: &str = "dude/dude.trickfilm.ron";
 const NAME_ASSET_MACRO: &str = "dude";
@@ -212,8 +212,12 @@ fn write_assets_macro(images: &Vec<PathBuf>, container: &Container) {
 
 fn read_metadata(file: &Path) -> HashMap<String, Vec<(AnimationEvents, usize)>> {
     let mut hash_map: HashMap<String, Vec<(AnimationEvents, usize)>> = HashMap::new();
-    let contents = read_to_string(file)
-        .expect("Can't open metadata file")
+    let raw_metadata = read_to_string(file).expect("Can't open metadata file");
+    if raw_metadata.is_empty() {
+        return HashMap::new();
+    }
+
+    let contents = raw_metadata
         .strip_suffix('\n')
         .expect("Malformed metadata file, supposed to end on a newline")
         .to_string();
@@ -301,10 +305,17 @@ fn main() {
     for image in &images {
         let img = image::open(image).unwrap();
 
-        let x_index = animation_frame(image) - 1;
+        let x_index = animation_frame(image);
         let y_index = animation_direction(image);
 
         let out_img = output_images.get_mut(&animation_base_name(image)).unwrap();
+
+        assert!(
+            x_index * container.width < out_img.width(),
+            "{}, {}",
+            x_index * container.width,
+            out_img.width()
+        );
 
         out_img
             .copy_from(&img, x_index * container.width, y_index * container.height)
