@@ -1,3 +1,6 @@
+# NOTE: You must set 'Make Markers Local' in blender in the animation marker section.
+# Otherwise you will not be able to send events using markers.
+
 from math import pi, sqrt
 from shutil import rmtree
 from os.path import isdir
