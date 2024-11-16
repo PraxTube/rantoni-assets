@@ -233,6 +233,7 @@ If you end up implementing multiple gangs then you could do something like some 
 - Keep story segments short, probably less than one minute, towards the end longer segments are toleratable
 - Do not, **EVER** start the game with a cutscene or stupid story shit, **EVER**, let the player _want_ to know more about the world, open with gameplay instantly, explain what stuff is about as you go
     - Oh, I just realized this is **exactly** what Breath of the Wild does, and it's great (also Katana Zero does this a _tiny_ bit, like the first 2 minutes or so are tutorial and then story starts)
+    - `https://youtu.be/bups0ZUQdvc?t=308`, this is kinda talking about something similar
 - No story before 15min, I feel like that is a decent mark, mabye even 30min (though the game will not be that long in the first place, so yeah something in that ballpark)
 
 ### Possible stories

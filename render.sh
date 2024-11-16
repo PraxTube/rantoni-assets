@@ -10,5 +10,4 @@ blender $BLENDER_FILE --python $PYTHON_SCRIPT --background
 cd ./spritesheet-bundler/
 cargo run -- /home/rancic/code/rantoni-assets/
 mv out/*.png ~/code/game-dev/rantoni/assets/dude/
-
-# TODO: Move the out.trickfilm to the target location in rantoni
+mv out/out.trickfilm.ron ~/code/game-dev/rantoni/assets/dude/dude.trickfilm.ron
