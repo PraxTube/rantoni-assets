@@ -12,10 +12,12 @@ Z_HEIGHT = 9.5
 X_DISTANCE = 10
 X_ANGLE = 0.95
 SQRT_2 = sqrt(2)
+SUN_ANGLES = (-0.38, 0.19, 0)
 
 # Names for objects in Blender.
 # It is required to name them this way, they are also the default name.
 CAMERA_STRING_NAME = "Camera"
+SUN_LIGHT_STRING_NAME = "Sun"
 CHARACTER_RIG_NAME = "rig"
 
 RENDER_RESOLUTION_X = 100
@@ -105,6 +107,10 @@ camera = bpy.data.objects[CAMERA_STRING_NAME]
 if camera is None:
     raise ValueError("Expected to find camera with name 'Camera' but none is present in scene.")
 
+sun = bpy.data.objects[SUN_LIGHT_STRING_NAME]
+if sun is None:
+    raise ValueError("Expected to find light with name 'Sun' but none is present in scene.")
+
 rig = bpy.data.objects[CHARACTER_RIG_NAME]
 if rig is None:
     raise ValueError("Expected to find rig with name 'rig' but none is present in scene.")
@@ -127,6 +133,7 @@ for action in bpy.data.actions:
     for (orientation, (position, rotation)) in enumerate(camera_positions_rotations):
         camera.location = position
         camera.rotation_euler = rotation
+        sun.rotation_euler = (SUN_ANGLES[0], SUN_ANGLES[1], orientation / 8 * 2 * pi)
 
         bpy.context.scene.render.filepath = f"{RENDER_OUTPUT_DIR}/{action.name}-o{orientation}-"
         bpy.ops.render.render(animation=True)
