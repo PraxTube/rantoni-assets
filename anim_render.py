@@ -87,20 +87,12 @@ print("\n\n---> Attempting to render animations...")
 camera_positions_rotations = [
     # Top
     ((0, X_DISTANCE, Z_HEIGHT), (X_ANGLE, 0, pi)),
-    # Top Right
-    ((-X_DISTANCE / SQRT_2, X_DISTANCE / SQRT_2, Z_HEIGHT), (X_ANGLE, 0, 5 / 4 * pi)),
     # Right
     ((-X_DISTANCE, 0, Z_HEIGHT), (X_ANGLE, 0, - pi / 2)),
-    # Bottom Right
-    ((-X_DISTANCE / SQRT_2, -X_DISTANCE / SQRT_2, Z_HEIGHT), (X_ANGLE, 0, - 1 / 4 * pi)),
     # Bottom
     ((0, -X_DISTANCE, Z_HEIGHT), (X_ANGLE, 0, 0)),
-    # Bottom Left
-    ((X_DISTANCE / SQRT_2, -X_DISTANCE / SQRT_2, Z_HEIGHT), (X_ANGLE, 0, 1 / 4 * pi)),
     # Left
     ((X_DISTANCE, 0, Z_HEIGHT), (X_ANGLE, 0, pi / 2)),
-    # Top Left
-    ((X_DISTANCE / SQRT_2, X_DISTANCE / SQRT_2, Z_HEIGHT), (X_ANGLE, 0, -5 / 4 * pi)),
 ]
 
 camera = bpy.data.objects[CAMERA_STRING_NAME]
@@ -133,7 +125,7 @@ for action in bpy.data.actions:
     for (orientation, (position, rotation)) in enumerate(camera_positions_rotations):
         camera.location = position
         camera.rotation_euler = rotation
-        sun.rotation_euler = (SUN_ANGLES[0], SUN_ANGLES[1], orientation / 8 * 2 * pi)
+        sun.rotation_euler = (SUN_ANGLES[0], SUN_ANGLES[1], orientation / 4 * 2 * pi)
 
         bpy.context.scene.render.filepath = f"{RENDER_OUTPUT_DIR}/{action.name}-o{orientation}-"
         bpy.ops.render.render(animation=True)

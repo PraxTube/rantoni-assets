@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use std::fs::{self, create_dir, read_dir, read_to_string};
+use std::fs::{create_dir, read_dir};
 use std::path::Path;
 use std::str::FromStr;
 use std::{env, path::PathBuf};
@@ -8,16 +8,7 @@ use anyhow::{anyhow, Result};
 use image::{GenericImage, ImageBuffer, ImageReader};
 
 const RENDER_DIR: &str = "render";
-const METADATA_FILE: &str = "metadata.csv";
-
 const OUTPUT_DIR: &str = "out/";
-const OUTPUT_RON_FILE: &str = "out.trickfilm.ron";
-const OUTPUT_ASSET_MACRO_FILE: &str = "out-asset.txt";
-
-const FRAME_RATE: f32 = 18.0;
-
-const TRICKFILM_ASSET_MACRO_PATH: &str = "dude/dude.trickfilm.ron";
-const NAME_ASSET_MACRO: &str = "dude";
 
 #[derive(Default)]
 struct Container {
@@ -93,156 +84,6 @@ fn animation_name(path: &PathBuf) -> String {
     parts[0].to_string() + "-" + parts[1]
 }
 
-fn animation_format(
-    start_index: u32,
-    end_index: u32,
-    animation: &str,
-    metadata: &HashMap<String, Vec<(AnimationEvents, usize)>>,
-) -> String {
-    let duration = (end_index - start_index) as f32 / FRAME_RATE;
-
-    let mut events_str = String::new();
-    let key = animation
-        .split('-')
-        .next()
-        .expect("Failed to get stem name of animation, unexpected format");
-    if let Some(events) = metadata.get(key) {
-        events_str += "\n\t\tevents: {\n";
-
-        for (event, frame) in events {
-            events_str += &format!("\t\t\t{}: ", frame);
-            events_str += "{\n";
-            events_str += &format!(
-                "\t\t\t\t\"rantoni::assets::events::{}\": (\n",
-                event.to_string()
-            );
-
-            match event {
-                AnimationEvents::HitboxStart => {
-                    events_str += &format!("\t\t\t\t\tmsg: \"{}\",\n", animation);
-                }
-            };
-
-            events_str += "\t\t\t\t)\n";
-            events_str += "\t\t\t},\n";
-        }
-
-        events_str += "\t\t},";
-    }
-
-    format!(
-        "\t\"{animation}\": (
-\t\tkeyframes: KeyframesRange((start: {start_index}, end: {end_index})),
-\t\tduration: {duration},{events_str}
-\t),
-"
-    )
-}
-
-fn write_trickfilm_file(images: &Vec<PathBuf>, container: &Container, path: &Path) {
-    let metadata = read_metadata(&path.join(METADATA_FILE));
-    let mut content = String::new();
-    content += "{\n";
-
-    let mut start_index = 0;
-    let mut current_index = 0;
-
-    let mut current_animation = animation_name(&images[0]);
-    let mut current_base_animation = animation_base_name(&images[0]);
-
-    for image in images {
-        let animation_name = animation_name(image);
-        let animation_base_name = animation_base_name(image);
-
-        if animation_name != current_animation {
-            content += &animation_format(start_index, current_index, &current_animation, &metadata);
-            current_animation = animation_name;
-            start_index = animation_direction(image) * container.frames;
-            current_index = start_index;
-        }
-
-        if animation_base_name != current_base_animation {
-            start_index = 0;
-            current_index = 0;
-            current_base_animation = animation_base_name;
-        }
-
-        current_index += 1;
-    }
-    content += &animation_format(start_index, current_index, &current_animation, &metadata);
-
-    content += "}";
-    fs::write(OUTPUT_DIR.to_string() + OUTPUT_RON_FILE, content).unwrap();
-}
-
-fn write_assets_macro(images: &Vec<PathBuf>, container: &Container) {
-    let layout_content = format!(
-        "#[asset(texture_atlas_layout(tile_size_x = {}, tile_size_y = {}, columns = {}, rows = {}))]\npub {}_layout: Handle<TextureAtlasLayout>,\n",
-        container.width,
-        container.height,
-        container.frames,
-        8,
-        NAME_ASSET_MACRO,
-    );
-    let mut animation_content = "\n\n#[asset(paths(\n".to_string();
-
-    let mut current_animation = animation_name(&images[0]);
-    for image in images {
-        let animation_name = animation_name(&image);
-        if animation_name != current_animation {
-            animation_content += &format!(
-                "\"{}#{}\",\n",
-                TRICKFILM_ASSET_MACRO_PATH, current_animation
-            );
-            current_animation = animation_name;
-        }
-    }
-    animation_content += &format!(
-        "\"{}#{}\",\n",
-        TRICKFILM_ASSET_MACRO_PATH, current_animation
-    );
-    animation_content += "),collection(typed))]";
-
-    fs::write(
-        OUTPUT_DIR.to_string() + OUTPUT_ASSET_MACRO_FILE,
-        layout_content + &animation_content,
-    )
-    .unwrap();
-}
-
-fn read_metadata(file: &Path) -> HashMap<String, Vec<(AnimationEvents, usize)>> {
-    let mut hash_map: HashMap<String, Vec<(AnimationEvents, usize)>> = HashMap::new();
-    let raw_metadata = read_to_string(file).expect("Can't open metadata file");
-    if raw_metadata.is_empty() {
-        return HashMap::new();
-    }
-
-    let contents = raw_metadata
-        .strip_suffix('\n')
-        .expect("Malformed metadata file, supposed to end on a newline")
-        .to_string();
-    for line in contents.split('\n') {
-        let parts: Vec<&str> = line.split(',').collect();
-        let key = parts[0].to_string();
-
-        let mut value = match hash_map.get(&key) {
-            Some(v) => v.to_vec(),
-            None => Vec::new(),
-        };
-
-        value.push((
-            AnimationEvents::from_str(parts[1])
-                .expect("Failed to convert string to AnimationEvent"),
-            parts[2]
-                .parse::<usize>()
-                .expect("Failed to parse string to usize"),
-        ));
-
-        hash_map.insert(key, value);
-    }
-    hash_map
-}
-
 fn main() {
     let path = &env::args().nth(1).expect("Can't find target folder");
     let target_path = Path::new(path);
@@ -298,7 +139,7 @@ fn main() {
     for animation in container.animation_data.keys() {
         output_images.insert(
             animation,
-            ImageBuffer::new(container.width * container.frames, container.height * 8),
+            ImageBuffer::new(container.width * container.frames, container.height * 4),
         );
     }
 
@@ -323,10 +164,7 @@ fn main() {
     }
 
     for (animation, img) in output_images {
-        img.save(OUTPUT_DIR.to_string() + NAME_ASSET_MACRO + "_" + &animation + ".png")
+        img.save(OUTPUT_DIR.to_string() + &animation + ".png")
             .unwrap();
     }
-
-    write_trickfilm_file(&images, &container, target_path);
-    write_assets_macro(&images, &container);
 }
