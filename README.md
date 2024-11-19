@@ -10,13 +10,20 @@ Overall a great reference for what NOT to do is in the game Redeemer, boy oh boy
 
 Deadline: End of 2024
 
-Fully functioning gameplay, player graphics and 2 enemy graphis, tileset of first area. Art direction should be somewhat dialed in at this point.
+Fully functioning gameplay, player graphics and 2 enemy graphis, tileset of first area (complete tileset) and also some props. Art direction should be somewhat dialed in at this point.
+
+Some key things will still be missing here:
+
+- No dialogue or story (neither code nor content)
+- No menu's or any UI
+- No sounds
+- No real polish except raw gameplay (and art as much as possible)
 
 ### MVP (vertical slice)
 
 Deadline: March 2025
 
-- Steam page
+- Steam page (private, WIP)
 - Reach out to Anton
 
 This is all about taking what we have and polishing it to the absolute extreme. We aren't going to add much more stuff in terms of content or features, just making sure that what we got is really good.
@@ -37,11 +44,19 @@ This is also the point at which we reach out to Anton and ask if he wants to joi
 
 Deadline: End of May 2025
 
+- Figure out a name for the game dude
+- Discord server
+- Proper steam page (public)
+- Proper Music
+- Story
+
 Now we just add content to the game, new levels, new areas, new enemies, story etc. The target here is to have around an hour of gameplay or slightly shorter, then give this to a bunch of playtesters and get feedback on all parts of the game.
 
 The game should be very close to the finished product, so dialogue and story and all that will be implemented during this cycle.
 
-The steam page will also be made public (with trailer and everything). Here are some decisions that depend on whether Anton is in the team or not
+The steam page will also be made public (with trailer and everything). You should also start a Discord server at this point and make videos and shit about it. What about Lost Oppai? If Anton didn't join, then you can finish that and make a devlog and teaser our game at the end.
+
+Here are some decisions that depend on whether Anton is in the team or not
 
 - Steam capsule art, how much do you want to spend?
 - Music, how much do you want to spend?
