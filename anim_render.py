@@ -8,8 +8,8 @@ from os.path import isdir
 import bpy
 
 # Camera settings
-Z_HEIGHT = 9.5
-X_DISTANCE = 10
+Z_HEIGHT = 9
+X_DISTANCE = 9
 X_ANGLE = 0.95
 SQRT_2 = sqrt(2)
 SUN_ANGLES = (-0.38, 0.19, 0)
@@ -20,8 +20,8 @@ CAMERA_STRING_NAME = "Camera"
 SUN_LIGHT_STRING_NAME = "Sun"
 CHARACTER_RIG_NAME = "rig"
 
-RENDER_RESOLUTION_X = 100
-RENDER_RESOLUTION_Y = 100
+RENDER_RESOLUTION_X = 125
+RENDER_RESOLUTION_Y = 125
 COLOR_PALETTE_FILE = "./palette.png"
 MATERIAL_NAME = "character"
 

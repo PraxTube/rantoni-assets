@@ -320,6 +320,13 @@ As I said, I am pretty open to anything, though for the case that I need to writ
 - Protagonist is a former elitst fighter (monk/martial artist? something), but now lives a life secluded from any kind of civilization with his family, or well, used to live, they got all killed (or perhaps some got kidnapped?) so you set out to kill them all in act of vengance (or rescue the ones that were kidnappes?). I am not a huge fan of this, super flat story, also the villains are just super boring, story very similar to that of Redeemer.
 - Protagonist is just some random guy that works out like crazy as an outlet for his anger (he is working some random shit job, like 9 to 5 office job with some stupid as boss), absolutely hating society and parts of his life but he is holding out somewhat due to workout out everyday, but he hates the weak man around him, the fact that his boss is such a mentally weak man with no integrity or pride or discipline. Then some event happens that make him snap, the whole idea of this plotline is based on epsiode 7 of DanDaDan, if you watch it you will pretty much know exactly what I am talking about. So anyways, this event makes him realize all the problems with society are due to weak man (or at least that his the conclusion our protagonist arrives at). And so begins his journey to eradicate all the weak man (essentially anybody that harms others for their own good). Maybe it could be even more twisted that the protagonist starts to also kill innocent people that just seem weak, like normal office workers that didn't do anything wrong, but from his perspective they also didn't do anything _right_, so perhaps at the start he is rescuing and helping those, but at the end he is just mercilessly killing everybody.
 
+## Optimization
+
+The biggest concern is memory. I would really like to stay below 2 gigs, and the biggest offender of this are the characters (player, enemies etc). There are two optimizations I can implement fairly easily that should reduce memory by more than 50%.
+
+- Each animation should have its own layout, this allows us to cut out any redundant empty cells. It does mean I will have to swap at the layout at runtime for every animation (but if we load that in the AssetLoading step then this should be virtually zero cost). It also makes the pipeline a little more ugly but I will figure something out there. **Expected Result: ~50%**
+- Batch frames that are identical together and utilize trickfilms keyframe timestamps to encode the same frame data. Useful for stuff like idle animations or parries or later on enemy anticipation animations. **Expected Result: ~15**
+
 ## Legal
 
 ### Localization
