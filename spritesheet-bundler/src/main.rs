@@ -323,7 +323,7 @@ fn main() {
     }
 
     for (animation, img) in output_images {
-        img.save(OUTPUT_DIR.to_string() + NAME_ASSET_MACRO + "_" + &animation + ".png")
+        img.save(OUTPUT_DIR.to_string() + &animation + ".png")
             .unwrap();
     }
 
