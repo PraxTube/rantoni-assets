@@ -33,6 +33,46 @@ inputs=(
   "front_kick-o1"
   "front_kick-o2"
   "front_kick-o3"
+  "run-o0"
+  "run-o1"
+  "run-o2"
+  "run-o3"
+  "parry-o0"
+  "parry-o1"
+  "parry-o2"
+  "parry-o3"
+  "parry_success-o0"
+  "parry_success-o1"
+  "parry_success-o2"
+  "parry_success-o3"
+  "fall-o0"
+  "fall-o1"
+  "fall-o2"
+  "fall-o3"
+  "fall_recover-o0"
+  "fall_recover-o1"
+  "fall_recover-o2"
+  "fall_recover-o3"
+  "slide-o0"
+  "slide-o1"
+  "slide-o2"
+  "slide-o3"
+  "slide_recover-o0"
+  "slide_recover-o1"
+  "slide_recover-o2"
+  "slide_recover-o3"
+  "stance_broken-o0"
+  "stance_broken-o1"
+  "stance_broken-o2"
+  "stance_broken-o3"
+  "stance_broken_recover-o0"
+  "stance_broken_recover-o1"
+  "stance_broken_recover-o2"
+  "stance_broken_recover-o3"
+  "left_hook-o0"
+  "left_hook-o1"
+  "left_hook-o2"
+  "left_hook-o3"
 )
 
 for input in "${inputs[@]}"; do
@@ -49,5 +89,11 @@ convert spinning_back_kick-o0.gif spinning_back_kick-o1.gif spinning_back_kick-o
 convert death-o0.gif death-o1.gif death-o2.gif death-o3.gif death.gif
 convert axe_kick-o0.gif axe_kick-o1.gif axe_kick-o2.gif axe_kick-o3.gif axe_kick.gif
 convert front_kick-o0.gif front_kick-o1.gif front_kick-o2.gif front_kick-o3.gif front_kick.gif
+convert run-o0.gif run-o1.gif run-o2.gif run-o3.gif run.gif
+convert parry-o0.gif parry_success-o0.gif parry-o1.gif parry_success-o1.gif parry-o2.gif parry_success-o2.gif parry-o3.gif parry_success-o3.gif parry.gif
+convert fall-o0.gif fall_recover-o0.gif fall-o1.gif fall_recover-o1.gif fall-o2.gif fall_recover-o2.gif fall-o3.gif fall_recover-o3.gif fall.gif
+convert slide-o0.gif slide_recover-o0.gif slide-o1.gif slide_recover-o1.gif slide-o2.gif slide_recover-o2.gif slide-o3.gif slide_recover-o3.gif slide.gif
+convert stance_broken-o0.gif stance_broken_recover-o0.gif stance_broken-o1.gif stance_broken_recover-o1.gif stance_broken-o2.gif stance_broken_recover-o2.gif stance_broken-o3.gif stance_broken_recover-o3.gif stance_broken.gif
+convert left_hook-o0.gif left_hook-o1.gif left_hook-o2.gif left_hook-o3.gif left_hook.gif
 
 rm *-o?.gif
