@@ -2,7 +2,7 @@
 
 Everything regarding the game Rantoni that doesn't directly have to do with the game is in here. It's more like a dirty repo where I don't exactly try to keep a super clean history or small git dir size.
 
-Overall a great reference for what NOT to do is in the game Redeemer, boy oh boy does that game screw up.
+See [Luka's Bucketlist](./bucketlist-luka.md) for some of the things I am thinking about.
 
 ## Timeline
 
@@ -146,6 +146,8 @@ I am fairly sure that when playing with mouse and keyboard you would want to use
 
 ## Game References
 
+Overall a great reference for what NOT to do is in the game Redeemer, boy oh boy does that game screw up (though such a juice).
+
 - Redeemer
     - For game feel and gameplay
 - Midnight fight express
@@ -241,6 +243,7 @@ I am fairly sure that when playing with mouse and keyboard you would want to use
     - Share on main bevy discord server (in showcase channel for example, if you do gamedev logs then post there as well)
     - Possibly post on some more niche bevy servers like specific crates?
     - Put game on assets page
+- If you actually manage to finish this game, consider write Mr. Prime an email telling him about it and that he was a major influence (like a mentor). This isn't really about marketing and more about gratitude, but oh well I just put it here. Also if he notices it and streams it I guess that would be somewhat marketing, though I don't want to write an email with this pretence, so maybe don't.
 
 ### General Stuff
 
