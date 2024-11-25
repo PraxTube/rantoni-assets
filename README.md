@@ -70,6 +70,8 @@ On the other hand, if he did join, then you may expect a slightly more financial
 
 ### Steam Next Fest June 9 - 16
 
+Note: All things considred Steam NF doesn't seem to be all _that_ important (still good, but not the end all be all), smaller more specific events may be better, see `https://x.com/kylewbanks/status/1800920295148056789`.
+
 Okay so if everything went according to plan at this point, you kept all your deadlines and the player feedback was really positive and there weren't many bugs, then you can aim for the June Next Fest. You already have a demo, so you can just use that.
 
 If you didn't keep the deadlines or the feedback was extremely negative or there are a tone of bug reports, then don't go for this Next Fest. There will be on sometime in October most likely. The initial time exstimation by me was wrong and you will **not** be able to finish the game within a year. Take your time, fix the bugs, improve the game, add more content, get feedback.
@@ -93,6 +95,7 @@ So what next? Well I don't fucking know, by this point this is well over half a 
 
 - Don't you fucking dare to put bullet sponges in the game, bro just play Redeemer and you know what **not** to do
 - I really think that multiple factions in the game would be sick, something like in Streets of Rogue (different gangs, police, mafia, etc)
+    - `https://www.youtube.com/watch?v=RCc78olN0hs`
 
 #### Pathfinding
 
@@ -146,7 +149,7 @@ I am fairly sure that when playing with mouse and keyboard you would want to use
 
 ## Game References
 
-Overall a great reference for what NOT to do is in the game Redeemer, boy oh boy does that game screw up (though such a juice).
+Overall a great reference for what NOT to do is in the game Redeemer, boy oh boy does that game screw up (though such a juice). Not sure if this is a good reference overall `https://www.youtube.com/watch?v=YCjNT9qGjh4`.
 
 - Redeemer
     - For game feel and gameplay
@@ -225,11 +228,16 @@ Overall a great reference for what NOT to do is in the game Redeemer, boy oh boy
 
 ## Marketing
 
-### Talks
+### References
 
 - `https://www.youtube.com/watch?v=UJiv14uPOac`
 - `https://www.youtube.com/watch?v=EMGTcgsEN68`
 - `https://www.youtube.com/watch?v=ht6xx9en-ZU&t=21s`
+- `https://www.youtube.com/watch?v=57wxdbJHeng`
+- `https://www.reddit.com/r/gamedev/comments/1gere3c/my_first_game_had_more_than_45m_views_on_youtube/`
+- `https://github.com/tutsplus/Marketing-Checklist-For-Indie-Game-Developers/blob/master/Indie%20Game%20Developer%20Marketing%20Checklist.md`
+- `https://unitycodemonkey.com/video.php?v=dsXrUHWt3bQ`
+- `https://unitycodemonkey.com/howtomarketagame.php`
 
 ### Specific unique marketing
 
@@ -251,8 +259,6 @@ Overall a great reference for what NOT to do is in the game Redeemer, boy oh boy
 
 Just some rough plans for what you can do for marketing. Will probably not be able to do everything.
 
-- Some pointers for reference
-    - `https://github.com/tutsplus/Marketing-Checklist-For-Indie-Game-Developers/blob/master/Indie%20Game%20Developer%20Marketing%20Checklist.md`
 - Set up press kit and host on server
 - Discord server
     - Possible moderators: Eric, Ivan, Alex? (uni)

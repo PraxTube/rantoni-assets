@@ -1,11 +1,12 @@
 use std::collections::HashMap;
 use std::fs::{self, create_dir, read_dir, read_to_string};
 use std::path::Path;
+use std::process::Command;
 use std::str::FromStr;
 use std::{env, path::PathBuf};
 
 use anyhow::{anyhow, Result};
-use image::{GenericImage, ImageBuffer, ImageReader};
+use image::ImageReader;
 
 const RENDER_DIR: &str = "render";
 const METADATA_FILE: &str = "metadata.csv";
@@ -16,15 +17,12 @@ const OUTPUT_ASSET_MACRO_FILE: &str = "out-asset.txt";
 
 const FRAME_RATE: f32 = 18.0;
 
-const TRICKFILM_ASSET_MACRO_PATH: &str = "dude/dude.trickfilm.ron";
-const NAME_ASSET_MACRO: &str = "dude";
-
 #[derive(Default)]
 struct Container {
     width: u32,
     height: u32,
-    frames: u32,
-    animation_data: HashMap<String, u32>,
+    max_frames: u32,
+    animation_frames: HashMap<String, u32>,
 }
 
 #[derive(Clone, Copy, Debug)]
@@ -61,10 +59,16 @@ fn animation_parts(path: &PathBuf) -> Vec<String> {
         .collect()
 }
 
+/// Name of the animation as it appears in blender.
+///
+/// For example `idle-o3-0013.png` will return `idle`.
 fn animation_base_name(path: &PathBuf) -> String {
     animation_parts(path)[0].clone()
 }
 
+/// Orientation index of the animation.
+///
+/// For example `idle-o3-0013.png` will return `3`.
 fn animation_direction(path: &PathBuf) -> u32 {
     animation_parts(path)[1]
         .strip_prefix('o')
@@ -73,14 +77,9 @@ fn animation_direction(path: &PathBuf) -> u32 {
         .unwrap()
 }
 
-fn animation_frame(path: &PathBuf) -> u32 {
-    animation_parts(path)[2]
-        .strip_suffix(".png")
-        .unwrap()
-        .parse::<u32>()
-        .unwrap()
-}
-
+/// Name + orientation of the given animation.
+///
+/// For example `idle-o3-0013.png` will return `idle-o3`.
 fn animation_name(path: &PathBuf) -> String {
     let parts: Vec<&str> = path
         .file_name()
@@ -93,6 +92,8 @@ fn animation_name(path: &PathBuf) -> String {
     parts[0].to_string() + "-" + parts[1]
 }
 
+/// Trickfilm string data for the given animation.
+/// This contains all of the animation data, meaning all of the indices, times, events.
 fn animation_format(
     start_index: u32,
     end_index: u32,
@@ -157,7 +158,11 @@ fn write_trickfilm_file(images: &Vec<PathBuf>, container: &Container, path: &Pat
         if animation_name != current_animation {
             content += &animation_format(start_index, current_index, &current_animation, &metadata);
             current_animation = animation_name;
-            start_index = animation_direction(image) * container.frames;
+            start_index = animation_direction(image)
+                * container
+                    .animation_frames
+                    .get(&animation_base_name)
+                    .expect("animation base name not present in anim data");
             current_index = start_index;
         }
 
@@ -175,14 +180,19 @@ fn write_trickfilm_file(images: &Vec<PathBuf>, container: &Container, path: &Pat
     fs::write(OUTPUT_DIR.to_string() + OUTPUT_RON_FILE, content).unwrap();
 }
 
-fn write_assets_macro(images: &Vec<PathBuf>, container: &Container) {
+fn write_assets_macro(
+    images: &Vec<PathBuf>,
+    container: &Container,
+    name: &str,
+    trickfilm_path: &str,
+) {
     let layout_content = format!(
         "#[asset(texture_atlas_layout(tile_size_x = {}, tile_size_y = {}, columns = {}, rows = {}))]\npub {}_layout: Handle<TextureAtlasLayout>,\n",
         container.width,
         container.height,
-        container.frames,
+        container.max_frames,
         8,
-        NAME_ASSET_MACRO,
+        name
     );
     let mut animation_content = "\n\n#[asset(paths(\n".to_string();
 
@@ -190,17 +200,11 @@ fn write_assets_macro(images: &Vec<PathBuf>, container: &Container) {
     for image in images {
         let animation_name = animation_name(&image);
         if animation_name != current_animation {
-            animation_content += &format!(
-                "\"{}#{}\",\n",
-                TRICKFILM_ASSET_MACRO_PATH, current_animation
-            );
+            animation_content += &format!("\"{}#{}\",\n", trickfilm_path, current_animation);
             current_animation = animation_name;
         }
     }
-    animation_content += &format!(
-        "\"{}#{}\",\n",
-        TRICKFILM_ASSET_MACRO_PATH, current_animation
-    );
+    animation_content += &format!("\"{}#{}\",\n", trickfilm_path, current_animation);
     animation_content += "),collection(typed))]";
 
     fs::write(
@@ -243,18 +247,34 @@ fn read_metadata(file: &Path) -> HashMap<String, Vec<(AnimationEvents, usize)>> 
     hash_map
 }
 
-fn main() {
-    let path = &env::args().nth(1).expect("Can't find target folder");
-    let target_path = Path::new(path);
+fn add_frame_data_to_container(container: &mut Container, images: &Vec<PathBuf>) {
+    let mut current_index = 0;
+    let mut current_animation = animation_name(&images[0]);
 
-    if !Path::new(OUTPUT_DIR).exists() {
-        create_dir(OUTPUT_DIR).unwrap();
+    for image in images {
+        let base_animation = animation_base_name(image);
+        let animation = animation_name(image);
+
+        if animation != current_animation {
+            if current_index > container.max_frames {
+                container.max_frames = current_index;
+            }
+
+            container
+                .animation_frames
+                .insert(base_animation.clone(), current_index);
+            current_animation = animation;
+            current_index = 0;
+        }
+        current_index += 1;
     }
+}
 
+fn get_images_and_container(parent_dir: &PathBuf) -> (Vec<PathBuf>, Container) {
     let mut container = Container::default();
     let mut images = Vec::new();
 
-    for path in read_dir(target_path.join(RENDER_DIR)).expect("Given path is not correct") {
+    for path in read_dir(parent_dir.join(RENDER_DIR)).expect("Given path is not correct") {
         let path = match path {
             Ok(r) => r,
             Err(err) => panic!("Something wrong with path, {}", err),
@@ -272,61 +292,53 @@ fn main() {
     }
     images.sort_by(|a, b| a.file_name().cmp(&b.file_name()));
 
-    let mut output_images = HashMap::new();
+    add_frame_data_to_container(&mut container, &images);
 
-    let mut current_index = 0;
-    let mut current_animation = animation_name(&images[0]);
+    (images, container)
+}
 
-    for image in &images {
-        let base_animation = animation_base_name(image);
-        let animation = animation_name(image);
+fn main() {
+    let name = &env::args()
+        .nth(1)
+        .expect("must give name of the asset as second argument");
+    let trickfilm_path = &env::args()
+        .nth(2)
+        .expect("must give relative trickfilm path to the asset as third argument");
 
-        if animation != current_animation {
-            if current_index > container.frames {
-                container.frames = current_index;
-            }
+    let mut parent_dir =
+        env::current_dir().expect("Current dir is not valid, failed to get current dir");
+    assert!(parent_dir.pop(), "parent dir must exist");
 
-            container
-                .animation_data
-                .insert(base_animation.clone(), current_index);
-            current_animation = animation;
-            current_index = 0;
-        }
-        current_index += 1;
+    if !Path::new(OUTPUT_DIR).exists() {
+        create_dir(OUTPUT_DIR).unwrap();
     }
 
-    for animation in container.animation_data.keys() {
-        output_images.insert(
-            animation,
-            ImageBuffer::new(container.width * container.frames, container.height * 8),
-        );
-    }
+    let (images, container) = get_images_and_container(&parent_dir);
 
-    for image in &images {
-        let img = image::open(image).unwrap();
-
-        let x_index = animation_frame(image);
-        let y_index = animation_direction(image);
-
-        let out_img = output_images.get_mut(&animation_base_name(image)).unwrap();
-
-        assert!(
-            x_index * container.width < out_img.width(),
-            "{}, {}",
-            x_index * container.width,
-            out_img.width()
-        );
-
-        out_img
-            .copy_from(&img, x_index * container.width, y_index * container.height)
+    for image in images.iter().filter(|f| {
+        f.to_str()
+            .expect("string convert from PathBuf shouldn't fail")
+            .ends_with("-o0-0000.png")
+    }) {
+        let image_names = animation_base_name(image) + "-o?-*.png";
+        println!("{}", image_names);
+        Command::new("magick")
+            .arg("montage")
+            .arg("-background")
+            .arg("none")
+            .arg(parent_dir.join(RENDER_DIR).join(&image_names))
+            .arg("-tile")
+            .arg("19x")
+            .arg("-geometry")
+            .arg("+0+0")
+            .arg("-limit")
+            .arg("width")
+            .arg(format!("{}", container.max_frames * container.width))
+            .arg(OUTPUT_DIR.to_string() + &animation_base_name(image) + ".png")
+            .status()
             .unwrap();
     }
 
-    for (animation, img) in output_images {
-        img.save(OUTPUT_DIR.to_string() + &animation + ".png")
-            .unwrap();
-    }
-
-    write_trickfilm_file(&images, &container, target_path);
-    write_assets_macro(&images, &container);
+    write_trickfilm_file(&images, &container, &parent_dir);
+    write_assets_macro(&images, &container, name, trickfilm_path);
 }
