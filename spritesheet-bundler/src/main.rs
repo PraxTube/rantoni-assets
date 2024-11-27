@@ -341,4 +341,38 @@ fn main() {
 
     write_trickfilm_file(&images, &container, &parent_dir);
     write_assets_macro(&images, &container, name, trickfilm_path);
+
+    print_stats(&container);
+}
+
+fn print_stats(container: &Container) {
+    let naive_size = container.width
+        * container.height
+        * 4
+        * 8
+        * container.max_frames
+        * container.animation_frames.len() as u32
+        / 1000_000;
+
+    let mut total_frames = 0;
+    for frames in container.animation_frames.values() {
+        total_frames += (frames * 8).div_ceil(container.max_frames) * container.max_frames;
+    }
+    let current_size = container.width * container.height * 4 * total_frames / 1000_000;
+
+    println!(
+        "\n{} MB - Total size of textures with naiive implementation",
+        naive_size
+    );
+
+    println!(
+        "{} MB - Total size of textures with current implementation",
+        current_size
+    );
+
+    println!("{} MB - Total difference", naive_size - current_size);
+    println!(
+        "{:.1} % - Less size",
+        100.0 - current_size as f32 * 100.0 / naive_size as f32
+    );
 }

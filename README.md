@@ -238,6 +238,7 @@ Overall a great reference for what NOT to do is in the game Redeemer, boy oh boy
 - `https://github.com/tutsplus/Marketing-Checklist-For-Indie-Game-Developers/blob/master/Indie%20Game%20Developer%20Marketing%20Checklist.md`
 - `https://unitycodemonkey.com/video.php?v=dsXrUHWt3bQ`
 - `https://unitycodemonkey.com/howtomarketagame.php`
+- `https://www.youtube.com/watch?v=hTG1B5mIRDk`
 
 ### Specific unique marketing
 
@@ -265,6 +266,18 @@ Just some rough plans for what you can do for marketing. Will probably not be ab
 - Send out steam keys to streamers/youtubers and ask them to play the game
 - Reach out to press/blogs etc
 - Youtube Videos (game dev logs) about the game
+
+### Steam Page
+
+- Absolutely look at games with similar genre and what they are doing
+- For the thumbnail, look at
+    - Midnight Fight Express
+    - Suit for Hire
+    - RUINER
+    - MADNESS: Project Nexus
+    - Akane
+    - Redeemer
+    - This makes the point: `https://youtu.be/hTG1B5mIRDk?t=1082`
 
 ## Level Design
 
@@ -328,6 +341,13 @@ As I said, I am pretty open to anything, though for the case that I need to writ
 - Protagonist is a former elitst fighter (monk/martial artist? something), but now lives a life secluded from any kind of civilization, only with his wife and daughter (or son? his family.). However, one day some kind of messanger arrives, to tell him that the world is in danger (or maybe not the world, maybe just his temple or something of his past, I really, *really* don't like these grandious stories where the hero has to save the entire world, keep it grounded man), so he has to set out to erradicate this danger for the sake of his families protection. You would leave your family in the protection of some old friend you trust, or something like that. What exactly happens here is kinda open, a betrayal? Probably too obvious, but some kind of interesting twist would be good.
 - Protagonist is a former elitst fighter (monk/martial artist? something), but now lives a life secluded from any kind of civilization with his family, or well, used to live, they got all killed (or perhaps some got kidnapped?) so you set out to kill them all in act of vengance (or rescue the ones that were kidnappes?). I am not a huge fan of this, super flat story, also the villains are just super boring, story very similar to that of Redeemer.
 - Protagonist is just some random guy that works out like crazy as an outlet for his anger (he is working some random shit job, like 9 to 5 office job with some stupid as boss), absolutely hating society and parts of his life but he is holding out somewhat due to workout out everyday, but he hates the weak man around him, the fact that his boss is such a mentally weak man with no integrity or pride or discipline. Then some event happens that make him snap, the whole idea of this plotline is based on epsiode 7 of DanDaDan, if you watch it you will pretty much know exactly what I am talking about. So anyways, this event makes him realize all the problems with society are due to weak man (or at least that his the conclusion our protagonist arrives at). And so begins his journey to eradicate all the weak man (essentially anybody that harms others for their own good). Maybe it could be even more twisted that the protagonist starts to also kill innocent people that just seem weak, like normal office workers that didn't do anything wrong, but from his perspective they also didn't do anything _right_, so perhaps at the start he is rescuing and helping those, but at the end he is just mercilessly killing everybody.
+- Some kind of brotherhood-like friendship theme. Maybe the best friend of the protagonist gets into trouble with the gangs or something? Or some premise like that, so now our protagonist has to help him out? Yeah not sure, don't have anything concrete but I really like that kind of brotherhood/bromance vibe.
+
+## The Name of The Game
+
+Just some ideas for a name of the game rather than Rantoni.
+
+- Amuka, similar name to Akane, got the idea from the word Akuma - reversed - Amuka. [Google search results](https://trends.google.com/trends/explore?date=now%201-d&q=Akuma,Amuka,Akane&hl=de) shows that `Amuka` isn't really searched for often, which I guess is good? So the connection to Akuma (devil in japanese) would be that the protagonist is getting viewed by his enemies is a devil or oni or some shit like that. So he got the nickname Amuka from them. Don't have strong feelings about this one though, idea came to while I was doing my morning farmer walks.
 
 ## Optimization
 
@@ -344,7 +364,7 @@ So there this happened to Jonas `https://youtu.be/MaFpf3nmHmo?t=798`, I personal
 
 ## MISC
 
-### Feedback for Concept Art
+### Random Shit
 
-- Views didn't match, preferably make both T-pose, meaning have legs parallel
-- Feet and hands would be nice (especially feet + shoes), separate close up shot of them
+- `Anthoni the Angry`, a boss that doesn't really have much to do with the story or anything else. Model based on Anton. Before the "boss fight" there is a bit of dialogue, bla bla, and then the fight begins, boss bar appears, epic music starts, Anthoni charges at you full speed, maybe even yelling in a local dialogue box a battle cry... then he trips and falls, puddle of blood starting to spread, his health bar goes from full to zero instantly, music cuts off. Thus, `Anthoni the Angry` was defeated, by the floor. So it's a fake boss battle.
+- Oh yeah what about a fake puzzle? Maybe that's too much work.
