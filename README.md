@@ -327,16 +327,17 @@ If you end up implementing multiple gangs then you could do something like some 
 ### How to Implement Story
 
 - It should never **EVER** interrupt gameplay, preferably put them at the end of chapters, don't know if they should always have one, maybe cutscenes? Maybe just simple dialogue? Maybe not all need them, depends on the pacing of the game I guess
-- Less is more, this game is about gameplay/mechanics first, everything else is second, story is just a little driving force, if the mechanics are ass then the story is not supposed to save it, the story must not overshadow gameplay
+- Less is more, this game is about gameplay/mechanics first, everything else is second, story is just a little driving force, if the mechanics are ass than the story is not supposed to save it, the story must not overshadow gameplay
 - Keep story segments short, probably less than one minute, towards the end longer segments are toleratable
 - Do not, **EVER** start the game with a cutscene or stupid story shit, **EVER**, let the player _want_ to know more about the world, open with gameplay instantly, explain what stuff is about as you go
-    - Oh, I just realized this is **exactly** what Breath of the Wild does, and it's great (also Katana Zero does this a _tiny_ bit, like the first 2 minutes or so are tutorial and then story starts)
+    - Oh, I just realized this is **exactly** what Breath of the Wild does (to be fair, the story of the game is basically already known, it's obvious that Ganon pulled some shinanigans etc etc, so it's not a fair comparision, Katana Zero is much closer to what we have here), and it's great (also Katana Zero does this a _tiny_ bit, like the first 2 minutes or so are tutorial and then story starts, use that as a reference, works much better)
     - `https://youtu.be/bups0ZUQdvc?t=308`, this is kinda talking about something similar
 - No story before 15min, I feel like that is a decent mark, mabye even 30min (though the game will not be that long in the first place, so yeah something in that ballpark)
+    - Okay so future me here, maybe that is a little much, I wouldn't put a hard limit on it, just playtest and see how it feels, also every player takes different time for each segment, keep that in mind
 
 ### Possible stories
 
-As I said, I am pretty open to anything, though for the case that I need to write the story myself, here are some potential ideas, dear future me. Also note that in any story, it will only start **after** the gameplay, regardless of what you actually choose, the player will be left to wonder why he is killing these guys, only then can you start the story.
+As I said, I am pretty open to anything, though for the case that I need to write the story myself, here are some potential ideas, dear future me. Also note that in any story, it will only start **after** the gameplay, regardless of what you actually choose, the player will be left to wonder why he is killing these guys, only then can you start the story (again, it's not like the player is gonna play hours without any kind of story, just let him play the game for a few solid minutes).
 
 - Protagonist is a former elitst fighter (monk/martial artist? something), but now lives a life secluded from any kind of civilization, only with his wife and daughter (or son? his family.). However, one day some kind of messanger arrives, to tell him that the world is in danger (or maybe not the world, maybe just his temple or something of his past, I really, *really* don't like these grandious stories where the hero has to save the entire world, keep it grounded man), so he has to set out to erradicate this danger for the sake of his families protection. You would leave your family in the protection of some old friend you trust, or something like that. What exactly happens here is kinda open, a betrayal? Probably too obvious, but some kind of interesting twist would be good.
 - Protagonist is a former elitst fighter (monk/martial artist? something), but now lives a life secluded from any kind of civilization with his family, or well, used to live, they got all killed (or perhaps some got kidnapped?) so you set out to kill them all in act of vengance (or rescue the ones that were kidnappes?). I am not a huge fan of this, super flat story, also the villains are just super boring, story very similar to that of Redeemer.
@@ -363,6 +364,11 @@ The biggest concern is memory. I would really like to stay below 2 gigs, and the
 So there this happened to Jonas `https://youtu.be/MaFpf3nmHmo?t=798`, I personally think that if you had a github repo with a clear license like MIT that said clearly that anybody that would contribute will have their work licensed under MIT would make this essentially a non problem? Though I guess it would be better to ask a lawyer for that? But if this were a problem then wouldn't all of open source be at risk?
 
 ## MISC
+
+### Feedback
+
+- So mock reviews are a thing apparently, see `https://youtu.be/g-geVoA8Xr4?t=793`
+- Look at negative reviews on similar games, see `https://youtu.be/g-geVoA8Xr4?t=968`
 
 ### Random Shit
 
