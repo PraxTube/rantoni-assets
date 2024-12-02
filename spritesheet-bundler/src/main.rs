@@ -328,7 +328,7 @@ fn main() {
             .arg("none")
             .arg(parent_dir.join(RENDER_DIR).join(&image_names))
             .arg("-tile")
-            .arg("19x")
+            .arg(format!("{}x", container.max_frames))
             .arg("-geometry")
             .arg("+0+0")
             .arg("-limit")
