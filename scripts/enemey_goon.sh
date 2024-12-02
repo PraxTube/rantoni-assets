@@ -4,11 +4,11 @@
 
 BLENDER_FILE="../enemey_goon.blend"
 
-TRICKFILM="goon/goon.trickfilm.ron"
+TRICKFILM="enemy/goon/goon.trickfilm.ron"
 CHARACTER_NAME="goon"
 
 TEXTURE_OUT="assets/enemy/goon/"
-TRICKFILM_OUT="assets/enemy/$TRICKFILM"
+TRICKFILM_OUT="assets/$TRICKFILM"
 
 # Don't change stuff below
 
