@@ -2,8 +2,6 @@
 # Otherwise you will not be able to send events using markers.
 
 from math import pi, sqrt
-from shutil import rmtree
-from os.path import isdir
 
 import bpy
 
@@ -30,18 +28,11 @@ METADATA_OUTPUT_DIR = "metadata.csv"
 
 bpy.context.scene.render.resolution_x = RENDER_RESOLUTION_X
 bpy.context.scene.render.resolution_y = RENDER_RESOLUTION_Y
+bpy.context.scene.render.fps = 18
 
 # Make sure the output has no anit-aliasing (make it pixel perfect)
 bpy.context.scene.render.film_transparent = True
 bpy.context.scene.render.filter_size = 0.0001
-
-
-print("\n\n---> Attempting to remove render output dir...")
-
-
-if isdir(RENDER_OUTPUT_DIR):
-    rmtree(RENDER_OUTPUT_DIR)
-
 
 print("\n\n---> Attempting to render animations...")
 

@@ -2,15 +2,13 @@
 
 Everything regarding the game Rantoni that doesn't directly have to do with the game is in here. It's more like a dirty repo where I don't exactly try to keep a super clean history or small git dir size.
 
-See [Luka's Bucketlist](./bucketlist-luka.md) for some of the things I am thinking about.
-
 ## Timeline
 
 ### Final Prototype (pre-MVP)
 
 Deadline: End of 2024
 
-Fully functioning gameplay, player graphics and 2 enemy graphis, tileset of first area (complete tileset) and also some props. Art direction should be somewhat dialed in at this point.
+Fully functioning gameplay, player and 1 enemy, tileset of first area (rail yard, complete tileset) and also some props (doesn't need to include breakable proprs, static ones will do for this milestone). Art direction should be somewhat dialed in at this point.
 
 Some key things will still be missing here:
 
