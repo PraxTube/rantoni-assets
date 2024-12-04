@@ -19,4 +19,4 @@ PROPS
 - trains
 
 ## 2nd priority: 
-enemy concept art (railyard goon, 6-7 heads tall)
+goon concept art (railyard goon, 6-7 heads tall)
