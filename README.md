@@ -47,6 +47,7 @@ Deadline: End of May 2025
 - Proper steam page (public)
 - Proper Music
 - Story
+- Put demo on steam
 
 Now we just add content to the game, new levels, new areas, new enemies, story etc. The target here is to have around an hour of gameplay or slightly shorter, then give this to a bunch of playtesters and get feedback on all parts of the game.
 
@@ -65,6 +66,8 @@ Here are some decisions that depend on whether Anton is in the team or not
 If Anton is not in, then I would say don't spend too much time overthinking any of these, don't spend too much money and don't expect a any financial successes. Also aim for a shorter game he didn't join, focus on getting it down rather then making it super good at this point.
 
 On the other hand, if he did join, then you may expect a slightly more financial success and could due with investing a bit more in art and music. You could also try to go for a slightly longer game (though nothing too long, focus is still on finishing it within 1 year).
+
+Also some words to whether or not to make a demo: I was at first quite conflicted about it, but I think a demo of around 30min could be very good. My main issue with it was that if somebody played the demo till the end and liked it enough to decide to buy the game, then they would need to play through the same thing again. But there are two ways to fix it: Just give a pop up at the start of the game that asks if the player has played through the demo and wants to skip the first section, or have the demo be different enough in terms of level and start (story maybe even) that it isn't that bad. I think the first option might be a bit nicer UX, if a player did not play the demo then he will just say no, if he did and doesn't want to skip it he still has the option to and if he does want to skip then there is that. I would prefer to not have that because I could imagine some players would get kinda anxious that they might miss something or whatever but oh well. Maybe this really isn't that bad of a problem to be honest and this just aint's an issue, should probably get feedback on this from players too.
 
 ### Steam Next Fest June 9 - 16
 
@@ -91,6 +94,7 @@ So what next? Well I don't fucking know, by this point this is well over half a 
 
 - `https://www.gameaipro.com/GameAIPro/GameAIPro_Chapter01_What_is_Game_AI.pdf`
 
+- I tried to implement context steering at some point, but it didn't work well with the pathfinding (i.e. it lead to bugs). But I just thought why not use context steering only when you have clear line of sight? That way pathfinding is not obstructed by context steering but we can still make use of it to avoid obstacles while stalking around the player.
 - Don't you fucking dare to put bullet sponges in the game, bro just play Redeemer and you know what **not** to do
 - I really think that multiple factions in the game would be sick, something like in Streets of Rogue (different gangs, police, mafia, etc)
     - `https://www.youtube.com/watch?v=RCc78olN0hs`
@@ -329,6 +333,7 @@ If you end up implementing multiple gangs then you could do something like some 
 - Keep story segments short, probably less than one minute, towards the end longer segments are toleratable
 - Do not, **EVER** start the game with a cutscene or stupid story shit, **EVER**, let the player _want_ to know more about the world, open with gameplay instantly, explain what stuff is about as you go
     - Oh, I just realized this is **exactly** what Breath of the Wild does (to be fair, the story of the game is basically already known, it's obvious that Ganon pulled some shinanigans etc etc, so it's not a fair comparision, Katana Zero is much closer to what we have here), and it's great (also Katana Zero does this a _tiny_ bit, like the first 2 minutes or so are tutorial and then story starts, use that as a reference, works much better)
+    - `https://www.youtube.com/watch?v=4k4-CP3q2xw` take a look at this, an old build of the game katana zero, story starts right away, not good I think
     - `https://youtu.be/bups0ZUQdvc?t=308`, this is kinda talking about something similar
 - No story before 15min, I feel like that is a decent mark, mabye even 30min (though the game will not be that long in the first place, so yeah something in that ballpark)
     - Okay so future me here, maybe that is a little much, I wouldn't put a hard limit on it, just playtest and see how it feels, also every player takes different time for each segment, keep that in mind
