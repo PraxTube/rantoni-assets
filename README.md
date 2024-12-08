@@ -230,6 +230,11 @@ Overall a great reference for what NOT to do is in the game Redeemer, boy oh boy
 
 ## Marketing
 
+- Steam Page
+- Demo
+- Reach out to Content Creators
+- Online Festivals
+
 ### References
 
 - `https://www.youtube.com/watch?v=UJiv14uPOac`
@@ -241,6 +246,7 @@ Overall a great reference for what NOT to do is in the game Redeemer, boy oh boy
 - `https://unitycodemonkey.com/video.php?v=dsXrUHWt3bQ`
 - `https://unitycodemonkey.com/howtomarketagame.php`
 - `https://www.youtube.com/watch?v=hTG1B5mIRDk`
+- `https://www.youtube.com/watch?v=-MH5OTWl3zA`
 
 ### Specific unique marketing
 
