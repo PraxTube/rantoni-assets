@@ -1,17 +1,20 @@
 # Luka's Bucketlist
 
-## Meeting Stuff
-
-- Show how I use git and this bucketlist, would be nice if Dominik did something similar (having all stuff in one place)
-
 ## TODO
 
-- Update bevy_trickfilm once the warn -> debug
+- Update to Bevy 0.15 once all deps are up to date
+    - This may breake quite a lot, so this would be kinda a pain, but it would also solve some issues
 - Make player non-staggerable when performing certain attacks (dropkick, hammerfist, the heavy attacks?), though still take damage
-- Probably want to squash enemies (insta kill) when you dropkick them and they are at a wall (even if their health isn't 0), this would also fix the issue of the weird jitter that happens when you push an enemy into a wall but then he pushes you back.
 - Attack buffer (cayote buffer), the game should be buffering inputs, attack input, for example when performing a dash, and the player presses the attack button just before the dash ends (so while the player state is still dashing) then the input will be flat out ignored. This can be quite unsatisfaying and frustrating. Maybe you even want to have a separate dash attack (like in Hades)? Though that might be a bit of a pain in the ass to implement (really not that hard, but you would need to make some more animations). Regardless of that, you should definitely handle that attack input somehow and perform the attack after the dash is finished.
+
+## Polish
+
+- Probably want to squash enemies (insta kill) when you dropkick them and they are at a wall (even if their health isn't 0), this would also fix the issue of the weird jitter that happens when you push an enemy into a wall but then he pushes you back.
 - Add damage highlight (red vignette? How does Redeemer do it?)
 - Add custom (big, good visible) mouse cursor, like in wizards of legends or redeemer `https://github.com/bevyengine/bevy/pull/14284`
+- Send enemies flying when landing killing blow and there is no obstacle behind them
+    - Do you want to send them flying like in anime in a comical manner where they do barrel roll (just watch this `https://youtu.be/Iei_44Lz99w?t=60`)
+- Also you can contiously spawn blood drops when enemies are flying away on killing blow, those drops then land on the ground and create a pile, which in turn creates a blood trail which could look pretty cool
 
 ## Maybe Features?
 

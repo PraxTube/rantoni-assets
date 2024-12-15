@@ -17,11 +17,13 @@ Some key things will still be missing here:
 - No sounds
 - No real polish except raw gameplay (and art as much as possible)
 
-### MVP (vertical slice)
+### MVP (small vertical slice)
 
 Deadline: March 2025
 
-- Steam page (private, WIP)
+- Polish the fuck out of the game
+- Register as a business (talk with Steuerberater)
+- Steam page
 - Reach out to Anton
 
 This is all about taking what we have and polishing it to the absolute extreme. We aren't going to add much more stuff in terms of content or features, just making sure that what we got is really good.
@@ -31,18 +33,32 @@ This is all about taking what we have and polishing it to the absolute extreme. 
 - Music
 - Tutorial
 - Menus (main menu, options)
+- Proper Title Screen/Main Menu
+    - I am thinking something similar to CrossCode could work really nicely, see `https://youtu.be/MULE6YCemXs?t=4`
+        - Probably way less good and without any of the animations (although they would be nice), but still something like that, player really close, looking far away to a city, setting probably night or at least evening or similar, the city obviously tokoy, actually for that think about something like `https://www.reddit.com/r/KatanaZero/comments/fwbbeu/katana_zero_desktop_setup/#lightbox`
+        - If you do decide to go for animations, perhaps blood dripping of the fists of our hero and protagonist? Or street lights of the city moving (or lights in general)
+        - Perhaps you could also do rain or something, with a thunder? Bro that would be sick, probably super hard to pull off though, also given that the images need to be huge this might be quite the memory investment, though wait, we only need them at the start of the game (or at least only when we are in the main menu), so we can just throw them out afterwards, yeah so not much of a problem after all I think
+    - DomDom?! What do you think? You are up for the task?
+    - Also Dead Cells has a really great title screen
+    - Redeemer has a lot simpler title screen but that has great atmosphere
 - QA (make sure there aren't many bugs, let other playtest)
 - Polish all the visuals (shadows, tilesets, maybe characters)
+- Gamemplay juice needs to be maxed
+    - Hitstop
+    - Input Buffering
+    - Enemies on walks insta dying
+    - Level transitioning working nicely
+    - etc. etc.
+- Figure out a name for the game dude
 
 Probably a bunch more. I am hoping it won't take that long, but I also have a bunch of exams and stuff around February so I don't think there is going to be too much time for me to spend on the game. Though by my estimations the targeted deadline is achievable.
 
-This is also the point at which we reach out to Anton and ask if he wants to join the team. Before we do that howver we would first create a steam page (still private and WIP at this point). Depending on his decision the further development will be changed.
+This is also the point at which we reach out to Anton and ask if he wants to join the team. Before we do that howver we would first create a steam page (still private if that is possible). Depending on his decision the further development will be changed.
 
-### Demo (30min - 1h long vertical slice)
+### Demo (30min long vertical slice)
 
 Deadline: End of May 2025
 
-- Figure out a name for the game dude
 - Discord server
 - Proper steam page (public)
 - Proper Music
@@ -145,10 +161,6 @@ Also allows for easily copy/pasting configs.
 - Destructable objects, sending enemies through walls is so much fun in Redeemer, should have that too
 - Experiment with camera responding to player (like dropkicking an enemy, should the camera move in a specific way?)
 
-### Regarding Player Movement with Mouse and Keyboard
-
-I am fairly sure that when playing with mouse and keyboard you would want to use your mouse for the target area. Using attack direction = move direction is just super ass. Dominik was the one who proposed it, but I think he will agree that it feels kinda shit (and just way too inaccurate) once he plays it that way.
-
 ## Game References
 
 Overall a great reference for what NOT to do is in the game Redeemer, boy oh boy does that game screw up (though such a juice). Not sure if this is a good reference overall `https://www.youtube.com/watch?v=YCjNT9qGjh4`.
@@ -185,16 +197,6 @@ Overall a great reference for what NOT to do is in the game Redeemer, boy oh boy
     - `https://www.gamedeveloper.com/production/art-design-deep-dive-using-a-3d-pipeline-for-2d-animation-in-i-dead-cells-i-`
     - `https://www.youtube.com/watch?v=iNDRre6q98g`
     - `https://stackoverflow.com/questions/70362019/how-to-vectorize-an-image-using-python`
-
-### Animation References
-
-- Slide attacking feels a little weird, this looks kinda better, maybe send enemies flying a little instant of just instantly putting them on the ground? OHH! Maybe this would also make the colliders easi- yeah no, but it might make things better, maybe
-    - `https://youtu.be/GbzdbDri3P8?t=32`
-    - `https://youtu.be/GbzdbDri3P8?t=103`
-- Oh! Maybe you could also use the same sliding for the drop kick, sending them flying and then they are grounded!
-    - `https://youtu.be/rLvbwNAFGRQ?t=4738`
-- Possible Jump animation and dropkick animation reference
-    - `https://youtu.be/rLvbwNAFGRQ?t=4798`
 
 ### Blender Stuff
 
@@ -270,10 +272,11 @@ Just some rough plans for what you can do for marketing. Will probably not be ab
 
 - Set up press kit and host on server
 - Discord server
-    - Possible moderators: Eric, Ivan, Alex? (uni)
 - Send out steam keys to streamers/youtubers and ask them to play the game
+    - You can also just tell them about your demo, that seems to be more common anyways
 - Reach out to press/blogs etc
 - Youtube Videos (game dev logs) about the game
+    - Preferably not this, it is unlikely to lead to much
 
 ### Steam Page
 
@@ -298,7 +301,7 @@ Take a look at Midnight Fight Express if you are running low on ideas, they also
     - Instead you could have something like 
 - Interiors?
 - City high rises (office buildings and rooms, playing both in the interior as well as on the roofs etc, looking down on the city)
-- Severs?
+- Sewers?
 - Winter region? (Hokkaido maybe? Something with snow would look cool)
 - Volcano? (Mr. Fuji? Would be sick, also great visuals)
 - Some temple in the mountains (I am picturing some kind of late summer/autumn setting, colorful trees and beatiful nature)
@@ -343,10 +346,12 @@ If you end up implementing multiple gangs then you could do something like some 
     - `https://youtu.be/bups0ZUQdvc?t=308`, this is kinda talking about something similar
 - No story before 15min, I feel like that is a decent mark, mabye even 30min (though the game will not be that long in the first place, so yeah something in that ballpark)
     - Okay so future me here, maybe that is a little much, I wouldn't put a hard limit on it, just playtest and see how it feels, also every player takes different time for each segment, keep that in mind
+- Possible fix for the issue with no story in the first 15min: Have some kind of radio or TV or something that explains what is going on, like "oh there were gang fights all over tokyo last night with 71 casulties and bla bla bla", but that thing is completely optional, maybe even make it destructable, I am imagining some little ass speaker that just has a dialogue box and it gets destroyed one hit if the player attacks it, signaling to the player that it's not important to listen, but they do have the option to if they are very into lore and story and shit.
+    - This could also solve the issue of having the player ask "why? what's the point?" without being so _in your face_ with it
 
 ### Possible stories
 
-As I said, I am pretty open to anything, though for the case that I need to write the story myself, here are some potential ideas, dear future me. Also note that in any story, it will only start **after** the gameplay, regardless of what you actually choose, the player will be left to wonder why he is killing these guys, only then can you start the story (again, it's not like the player is gonna play hours without any kind of story, just let him play the game for a few solid minutes).
+As I said, I am pretty open to anything, though for the case that I need to write the story myself, here are some potential ideas. Also note that in any story, it will only start **after** the gameplay, regardless of what you actually choose, the player will be left to wonder why he is killing these guys, only then can you start the story (again, it's not like the player is gonna play hours without any kind of story, just let him play the game for a few solid minutes).
 
 - Protagonist is a former elitst fighter (monk/martial artist? something), but now lives a life secluded from any kind of civilization, only with his wife and daughter (or son? his family.). However, one day some kind of messanger arrives, to tell him that the world is in danger (or maybe not the world, maybe just his temple or something of his past, I really, *really* don't like these grandious stories where the hero has to save the entire world, keep it grounded man), so he has to set out to erradicate this danger for the sake of his families protection. You would leave your family in the protection of some old friend you trust, or something like that. What exactly happens here is kinda open, a betrayal? Probably too obvious, but some kind of interesting twist would be good.
 - Protagonist is a former elitst fighter (monk/martial artist? something), but now lives a life secluded from any kind of civilization with his family, or well, used to live, they got all killed (or perhaps some got kidnapped?) so you set out to kill them all in act of vengance (or rescue the ones that were kidnappes?). I am not a huge fan of this, super flat story, also the villains are just super boring, story very similar to that of Redeemer.
@@ -356,6 +361,7 @@ As I said, I am pretty open to anything, though for the case that I need to writ
 ### Ideas for smaller Story Elements
 
 - Player is walking into a new area, triggers a semi cutscene, boy is crying and player (in cutscene mode) approaches boy, asks what's wrong. Boy sees player and asks for help because the player looks very strong, boy asks player to follow him. They backtrack, seeing all the blood and dead bodies etc. that the player caused, the boy continues to cry, his pace is getting slower? (Not sure about this, should his pace get faster? I mean he sees all the dead bodies and what not..), anyways, music is very slow and somewhat sad, as they get closer to the goal, the boy start screaming for his brother, and we see it's one of the many corpses that the player has just created... how to wrap this up? dunno, maybe just fade out to black, in that case you need to put it this whole thing at the end of a level (which I think is a good move anyways).
+- The thing with the exposition speaker at the start of the game
 
 ## The Name of The Game
 
@@ -363,18 +369,20 @@ Just some ideas for a name of the game rather than Rantoni.
 
 - Amuka, similar name to Akane, got the idea from the word Akuma - reversed - Amuka. [Google search results](https://trends.google.com/trends/explore?date=now%201-d&q=Akuma,Amuka,Akane&hl=de) shows that `Amuka` isn't really searched for often, which I guess is good? So the connection to Akuma (devil in japanese) would be that the protagonist is getting viewed by his enemies is a devil or oni or some shit like that. So he got the nickname Amuka from them. Don't have strong feelings about this one though, idea came to while I was doing my morning farmer walks.
 
+Generally, I think you should at least be aware of how easy it is to search for the game. For example, _Redeemer_ is a horrible name for a game, there are like a million different things associated with it so whenever you want to search something related to the game you need to search for _redeemer game_.
+
 ## Optimization
 
 The biggest concern is memory. I would really like to stay below 2 gigs, and the biggest offender of this are the characters (player, enemies etc). There are two optimizations I can implement fairly easily that should reduce memory by more than 50%.
 
-- Each animation should have its own layout, this allows us to cut out any redundant empty cells. It does mean I will have to swap at the layout at runtime for every animation (but if we load that in the AssetLoading step then this should be virtually zero cost). It also makes the pipeline a little more ugly but I will figure something out there. **Expected Result: ~50%**
 - Batch frames that are identical together and utilize trickfilms keyframe timestamps to encode the same frame data. Useful for stuff like idle animations or parries or later on enemy anticipation animations. **Expected Result: ~15**
+- Really just don't load everything in at once. If you have enemies specific to one area only then only load them in at that area.
 
 ## Legal
 
 ### Localization
 
-So there this happened to Jonas `https://youtu.be/MaFpf3nmHmo?t=798`, I personally think that if you had a github repo with a clear license like MIT that said clearly that anybody that would contribute will have their work licensed under MIT would make this essentially a non problem? Though I guess it would be better to ask a lawyer for that? But if this were a problem then wouldn't all of open source be at risk?
+So this happened to Jonas `https://youtu.be/MaFpf3nmHmo?t=798`, I personally think that if you had a github repo with a clear license like MIT that said clearly that anybody that would contribute will have their work licensed under MIT would make this essentially a non problem? Though I guess it would be better to ask a lawyer for that? But if this were a problem then wouldn't all of open source be at risk?
 
 ## MISC
 
@@ -385,5 +393,5 @@ So there this happened to Jonas `https://youtu.be/MaFpf3nmHmo?t=798`, I personal
 
 ### Random Shit
 
-- `Anthoni the Angry`, a boss that doesn't really have much to do with the story or anything else. Model based on Anton. Before the "boss fight" there is a bit of dialogue, bla bla, and then the fight begins, boss bar appears, epic music starts, Anthoni charges at you full speed, maybe even yelling in a local dialogue box a battle cry... then he trips and falls, puddle of blood starting to spread, his health bar goes from full to zero instantly, music cuts off. Thus, `Anthoni the Angry` was defeated, by the floor. So it's a fake boss battle.
+- `Anthony the Angry`, a boss that doesn't really have much to do with the story or anything else. Model based on Anton. Before the "boss fight" there is a bit of dialogue, bla bla, and then the fight begins, boss bar appears, epic music starts, Anthoni charges at you full speed, maybe even yelling in a local dialogue box a battle cry... then he trips and falls, puddle of blood starting to spread, his health bar goes from full to zero instantly, music cuts off. Thus, `Anthoni the Angry` was defeated, by the floor. So it's a fake boss battle.
 - Oh yeah what about a fake puzzle? Maybe that's too much work.
