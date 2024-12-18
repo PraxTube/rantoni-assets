@@ -2,6 +2,10 @@
 
 Everything regarding the game Rantoni that doesn't directly have to do with the game is in here. It's more like a dirty repo where I don't exactly try to keep a super clean history or small git dir size.
 
+So if all goes wrong with the art prototyping consider using more abstract form. In this case you could use stick figures in a very simple colored world (could still be tokyo for all I care, but it wouldn't really have many colors, also not many lights -> not really _neo_ tokyo then, but that would make the art way easier). Of course it would be less appealing, at that point though you really can only focus on getting it done and learning how to make a steam game.
+
+Okay so I tested a little bit to see if the stick figure stuff would work and I don't think that is really much easier. Besides, the main problem is the world and the world assets, I think we can use a more simple art form there either way (also with the current assets).
+
 ## Timeline
 
 ### Final Prototype (pre-MVP)
@@ -33,6 +37,8 @@ This is all about taking what we have and polishing it to the absolute extreme. 
 - Music
 - Tutorial
 - Menus (main menu, options)
+- UI
+    - Health bar, look at Redeemer, I like that
 - Proper Title Screen/Main Menu
     - I am thinking something similar to CrossCode could work really nicely, see `https://youtu.be/MULE6YCemXs?t=4`
         - Probably way less good and without any of the animations (although they would be nice), but still something like that, player really close, looking far away to a city, setting probably night or at least evening or similar, the city obviously tokoy, actually for that think about something like `https://www.reddit.com/r/KatanaZero/comments/fwbbeu/katana_zero_desktop_setup/#lightbox`
@@ -368,6 +374,7 @@ As I said, I am pretty open to anything, though for the case that I need to writ
 Just some ideas for a name of the game rather than Rantoni.
 
 - Amuka, similar name to Akane, got the idea from the word Akuma - reversed - Amuka. [Google search results](https://trends.google.com/trends/explore?date=now%201-d&q=Akuma,Amuka,Akane&hl=de) shows that `Amuka` isn't really searched for often, which I guess is good? So the connection to Akuma (devil in japanese) would be that the protagonist is getting viewed by his enemies is a devil or oni or some shit like that. So he got the nickname Amuka from them. Don't have strong feelings about this one though, idea came to while I was doing my morning farmer walks.
+- Aruka
 
 Generally, I think you should at least be aware of how easy it is to search for the game. For example, _Redeemer_ is a horrible name for a game, there are like a million different things associated with it so whenever you want to search something related to the game you need to search for _redeemer game_.
 
