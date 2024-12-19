@@ -1,5 +1,10 @@
 # TODO
+IMPORTANT: Do not keep polishing the same shit over and over. 
+The artstyle is nowhere near polished. Just do something basic. When we'll take the artstyle in a more specific direction, I'll just edit it.
 
+Notes on the art direction:
+- desaturated colors, washed darks
+- washed dark's temperature varying, depending on context. (railyard cold, ...)
 ## 1st priority: 
 tileset (simple, modern, NOT RESTROFUTURISM, ... unless?) 
 
@@ -8,8 +13,9 @@ notes on retrofuturism vs. purely futuristic:
 [ill keep the art style as simple as possible. changing the style to retro later is probably still fairly simple]
 
 TILES
-- plain asphalt (only full tile with some variation [cracks etc])
-- stone bricks (all tiles)
+- plain asphalt (only full tile) x
+    - tile variation (cracks, moss, puddles, etc.)
+- stone bricks (all tiles) x
 - rails
 
 PROPS
