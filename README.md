@@ -2,6 +2,8 @@
 
 Everything regarding the game Rantoni that doesn't directly have to do with the game is in here. It's more like a dirty repo where I don't exactly try to keep a super clean history or small git dir size.
 
+@modured Note on polishing art over and over: I read you note in your bucketlist, it very much reminded me of this dev log [`https://www.youtube.com/watch?v=zpbaulATcdY`](https://www.youtube.com/watch?v=zpbaulATcdY), he talks how he reworked the same thing over and over and was never happy with it (calling it art block), he starts properly talking about at minute 5. I am not saying you have that, that one line you wrote there just really reminded me of this dev log. Also, should I write the things directly in the bucketlist or do you prefer to keep that clean and your own? I don't mind either way, also if you ever want to write something in my bucketlist feel free to do that (if I want it removed I will just do that `:)`). Besides these notes are only meant tmporary anyways, and given that it's all using git we never actually "delete" anything anyways.
+
 So if all goes wrong with the art prototyping consider using more abstract form. In this case you could use stick figures in a very simple colored world (could still be tokyo for all I care, but it wouldn't really have many colors, also not many lights -> not really _neo_ tokyo then, but that would make the art way easier). Of course it would be less appealing, at that point though you really can only focus on getting it done and learning how to make a steam game.
 
 Okay so I tested a little bit to see if the stick figure stuff would work and I don't think that is really much easier. Besides, the main problem is the world and the world assets, I think we can use a more simple art form there either way (also with the current assets).
@@ -384,6 +386,36 @@ I think we could even take it in a more Chinese direction. Protagonist is a monk
 An idea: 
 Kung Fu Wu De  (功夫无德) - "Kung Fu without morality" 
 (Anton said this phrase a few times in his Sifu review I think. Originally he said 功夫武德， which sounds almost the same, but means "morality of martial arts")
+
+_Luka's notes on Dom's notes_
+
+> but I don't really like it being that similar to Akane (5-letter japanese sounding word starting with A)
+
+Yeah I get that, I am also not sure if that is going too close, especially because the art style is probably going to be _very_ similar. Though _Akane_ is based the anime _Akira_, which is also 5 letter japanese name starting with A, but yeah Anime -> Game is different to Game -> Game. However I think if the game is good and also similar to Akane in vibe, then it's not necessarily a bad thing that it is similar, one of the biggest critisques people had about Akane is that it didn't have any story, it's just an arcade like game where you kill as many enemies in a small arena as possible.
+
+> I think we could even take it in a more Chinese direction. Protagonist is a monk, if things go well, Anton is writing the story and I imagine it would be a lot easier for him if the baseline is a Chinese monk. Maybe even Kung Fu elements in his fighting style. 
+
+Oh that is pretty interesting. A chinese monk going to tokyo to beat the crap out of gang members, haha I like the sound of that. Also yeah, it would connect more to Anton for sure, only issue is that we need to settle on a few artistic choices before we reach out to Anton, this includes the name of the game (I am not 100% sure on this yet, I don't know how easy it is to change your steam page name and stuff like that, but it's a little more into the future so not that important right now).
+
+> Kung Fu Wu De  (功夫无德) - "Kung Fu without morality" 
+
+I really like this as a kind of undertone of the game, but I don't like it as a game name. Maybe a subtitle? But I think these types of games ever have that. Though this could definitely be used as a mantra throughout the game (I won't define what I mean by that right now, maybe something like "vibe" comes closest).
+
+I think short punchy names are best when it comes to names for this type of game, some examples:
+
+- Akane
+- Redeemer
+- Ruiner
+
+a little different names but similar vibe:
+
+- My friend Pedro
+- Katana Zero
+- Midnight Fight Express
+
+I personally prefer the shorter names much more, doesn't have to be a name of a character or anything, but I think that is easiest (also when considering SEO, bro try to search anything for Redeemer or Ruiner and you will get anything but the actual game to show up).
+
+Also as a little aside, when I first read _Kung Fu Wu De_ I said (and also read) _Kung Fu We Do_ haha. I don't know if that is just me or if other english speakers would also auto translate that in their heads.
 
 ## Optimization
 
